@@ -1,0 +1,66 @@
+# Data for the public-records tracker. Edit this file, then run:
+#
+#     python3.13 build.py
+#
+# The page is written to docs/index.html. To publish, commit and push:
+#
+#     git add -A && git commit -m "Update tracker" && git push
+#
+# status must be one of:
+#   drafted, filed, acknowledged, partial, fulfilled, denied, appealed
+#
+# Dates are written YYYY-MM-DD. Leave filed = "" until the request is sent.
+# Nothing under the "%% NOT PUBLISHED BELOW %%" line of a request's text file
+# appears on the site, so your contact details stay private.
+
+[site]
+title = "257 Franklin Street Records Tracker"
+tagline = "Following public-records requests about the environmental condition of a proposed Greenpoint elementary school site."
+intro = """
+New York City plans a 450-seat elementary school at 257 Franklin Street in \
+Greenpoint, Brooklyn, beside the Former NuHart Plastic Manufacturing State \
+Superfund site. The state certified the NuHart cleanup complete in July 2025, \
+with contamination remaining under long-term management. This page tracks \
+Freedom of Information Law requests for the test results behind those \
+decisions, and posts the records as they arrive."""
+
+[[request]]
+id = "sca"
+agency = "NYC School Construction Authority"
+subject = "Environmental investigation records for the school lot at 257 Franklin Street"
+status = "drafted"
+filed = ""
+reference = ""
+text_file = "../foil/sca-request.md"
+
+  [[request.event]]
+  date = "2026-11-18"
+  note = "Request drafted."
+
+[[request]]
+id = "dec"
+agency = "NYS Department of Environmental Conservation"
+subject = "Monitoring records since the cleanup was certified, Former NuHart Plastic site (No. 224136)"
+status = "drafted"
+filed = ""
+reference = ""
+text_file = "../foil/dec-request.md"
+
+  [[request.event]]
+  date = "2026-11-18"
+  note = "Request drafted."
+
+# To record progress, add events and documents under a request, for example:
+#
+#   [[request.event]]
+#   date = "2026-11-20"
+#   note = "Filed by email."
+#
+#   [[request.event]]
+#   date = "2026-11-25"
+#   note = "Acknowledged. Agency estimates a response by December 23."
+#
+#   [[request.document]]
+#   date = "2026-12-23"
+#   title = "Phase II Environmental Site Investigation report"
+#   url = "files/phase-ii-report.pdf"    # a file placed in docs/files/, written here as "files/name.pdf", or a full web address

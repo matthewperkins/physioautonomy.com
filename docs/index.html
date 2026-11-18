@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>257 Franklin Street Records Tracker</title>
+<meta name="description" content="Following public-records requests about the environmental condition of a proposed Greenpoint elementary school site.">
+<style>
+:root {
+  --paper: #faf7f0; --card: #ffffff; --ink: #1f2420; --muted: #636b63;
+  --rule: #ddd8cb; --accent: #2f5d50;
+  --neutral-bg: #ebe8df; --neutral-fg: #4c524c;
+  --waiting-bg: #fbefcf; --waiting-fg: #6f5200;
+  --good-bg: #dcefdf; --good-fg: #1d5a2c;
+  --bad-bg: #f8dedb; --bad-fg: #8c2318;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #171a18; --card: #1f2421; --ink: #e9e6dc; --muted: #a0a79f;
+    --rule: #353b36; --accent: #8fc7b3;
+    --neutral-bg: #303631; --neutral-fg: #c6ccc4;
+    --waiting-bg: #4a3c10; --waiting-fg: #f3d98a;
+    --good-bg: #1f4229; --good-fg: #a9dfb6;
+    --bad-bg: #522019; --bad-fg: #f5b3aa;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 18px/1.6 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+main { max-width: 44rem; margin: 0 auto; padding: 3rem 1rem 4rem; }
+h1 { font-size: 2.1rem; line-height: 1.2; margin: 0 0 .5rem; text-wrap: balance; }
+h2 { font-size: 1.3rem; line-height: 1.3; margin: .2rem 0 .7rem; text-wrap: balance; }
+h3 {
+  font: 600 .78rem/1.2 system-ui, sans-serif; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--muted); margin: 1.6rem 0 .5rem;
+}
+a { color: var(--accent); }
+.tagline { font-size: 1.15rem; color: var(--muted); margin: 0 0 1.5rem; }
+.intro { margin: 0 0 1rem; }
+.summary {
+  display: grid; grid-template-columns: repeat(4, auto); justify-content: start;
+  gap: .8rem 2.2rem; margin: 1.5rem 0 2.5rem;
+  padding: 1rem 0; border-block: 1px solid var(--rule);
+}
+.summary div { font: 500 .9rem system-ui, sans-serif; color: var(--muted); }
+.summary strong { display: block; font: 600 1.6rem/1.2 system-ui, sans-serif; color: var(--ink); }
+.request {
+  background: var(--card); border: 1px solid var(--rule); border-radius: 6px;
+  padding: 1.5rem; margin: 0 0 1.5rem;
+}
+.agency { font: 600 .85rem system-ui, sans-serif; color: var(--accent); margin: 0; }
+.badge {
+  display: inline-block; font: 600 .8rem system-ui, sans-serif;
+  padding: .25rem .7rem; border-radius: 99px; margin: 0;
+}
+.badge.neutral { background: var(--neutral-bg); color: var(--neutral-fg); }
+.badge.waiting { background: var(--waiting-bg); color: var(--waiting-fg); }
+.badge.good { background: var(--good-bg); color: var(--good-fg); }
+.badge.bad { background: var(--bad-bg); color: var(--bad-fg); }
+.facts { display: flex; flex-wrap: wrap; gap: .8rem 2rem; margin: 1.2rem 0 0; }
+.fact dt { font: 500 .78rem system-ui, sans-serif; color: var(--muted); }
+.fact dd { margin: 0; font: 500 1rem system-ui, sans-serif; }
+.fact.overdue dd { color: var(--bad-fg); }
+.timeline, .docs { list-style: none; margin: 0; padding: 0; }
+.timeline li { display: grid; grid-template-columns: 10.5rem 1fr; gap: 1rem; padding: .3rem 0; }
+.timeline time { font: 500 .88rem/1.9 system-ui, sans-serif; color: var(--muted); }
+.docs li { padding: .2rem 0; }
+.muted { color: var(--muted); font-size: .95rem; margin: 0; }
+details { margin-top: 1.6rem; border-top: 1px solid var(--rule); padding-top: 1rem; }
+summary { cursor: pointer; font: 600 .9rem system-ui, sans-serif; color: var(--accent); }
+.letter { white-space: pre-wrap; font-size: .95rem; margin-top: 1rem; overflow-wrap: anywhere; }
+footer { margin-top: 3rem; font: .85rem/1.5 system-ui, sans-serif; color: var(--muted); }
+footer p { margin: 0 0 .5rem; }
+@media (max-width: 520px) {
+  body { font-size: 17px; }
+  h1 { font-size: 1.7rem; }
+  .request { padding: 1.1rem; }
+  .summary { grid-template-columns: repeat(2, 1fr); }
+  .timeline li { grid-template-columns: 1fr; gap: 0; }
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>257 Franklin Street Records Tracker</h1>
+  <p class="tagline">Following public-records requests about the environmental condition of a proposed Greenpoint elementary school site.</p>
+  <p class="intro">New York City plans a 450-seat elementary school at 257 Franklin Street in Greenpoint, Brooklyn, beside the Former NuHart Plastic Manufacturing State Superfund site. The state certified the NuHart cleanup complete in July 2025, with contamination remaining under long-term management. This page tracks Freedom of Information Law requests for the test results behind those decisions, and posts the records as they arrive.</p>
+  <div class="summary">
+    <div><strong>2</strong>requests</div>
+    <div><strong>0</strong>filed</div>
+    <div><strong>0</strong>awaiting a response</div>
+    <div><strong>0</strong>records received</div>
+  </div>
+  
+    <article class="request" id="sca">
+      <header>
+        <p class="agency">NYC School Construction Authority</p>
+        <h2>Environmental investigation records for the school lot at 257 Franklin Street</h2>
+        <p class="badge neutral">Drafted, not yet filed</p>
+      </header>
+      <dl class="facts"><div class="fact"><dt>Filed</dt><dd>Not yet filed</dd></div></dl>
+      <h3>Timeline</h3>
+      <ol class="timeline"><li><time datetime="2026-11-18">November 18, 2026</time><span>Request drafted.</span></li></ol>
+      <h3>Records received</h3><p class="muted">None yet.</p>
+      <details>
+        <summary>Read the request</summary>
+        <div class="letter">To: Records Access Officer
+New York City School Construction Authority
+30-30 Thomson Avenue
+Long Island City, NY 11101
+
+Re: Freedom of Information Law request: environmental records for 257 Franklin Street, Brooklyn (proposed elementary school)
+
+Dear Records Access Officer,
+
+Under the New York Freedom of Information Law, Article 6 of the Public Officers Law, I request copies of the following records concerning the property at 257 Franklin Street, Brooklyn, NY 11222, the site of a proposed 450-seat elementary school. The request covers records from January 1, 2019 to the date of your response.
+
+1. Every Phase I Environmental Site Assessment and Phase II Environmental Site Investigation report for the property, complete with figures, sample location maps, analytical data tables, laboratory reports, and boring and monitoring well logs.
+
+2. For all soil vapor, sub-slab vapor, indoor air and ambient air samples collected at or next to the property: the sample locations, depths, dates, collection methods and analytical results.
+
+3. Records of any environmental sampling carried out at the property after the Phase II investigation, including groundwater, soil and soil vapor results.
+
+4. Any remedial investigation report, remedial action work plan or site management plan prepared for the property, and the design documents for the vapor barrier and sub-slab depressurization system planned for the school.
+
+5. Applications to, and correspondence with, the New York City Mayor&#x27;s Office of Environmental Remediation about enrolling the property in the City Voluntary Cleanup Program.
+
+6. Correspondence with the New York State Department of Environmental Conservation and the New York State Department of Health about the property and its relationship to the Former NuHart Plastic Manufacturing site (State Superfund Site No. 224136).
+
+7. The environmental review prepared for the selection of this site under the State Environmental Quality Review Act, including any environmental assessment and determination of significance.
+
+8. Presentation materials on the environmental condition of the property given to Brooklyn Community Board 1 or to elected officials.
+
+9. Records identifying the architect and engineers engaged to design the school, including the design contract or task order and its scope of work as it relates to outdoor play space and environmental controls.
+
+I ask for the records in electronic form, by email or download link. If any fee would exceed $25, please tell me before proceeding.
+
+Sample results, laboratory reports, data tables and location maps are factual data. Under Public Officers Law section 87(2)(g)(i) they must be disclosed even where they appear in draft or consultant-prepared documents. If you withhold any record or part of a record, please cite the specific exemption relied on, release the remainder, and tell me how to appeal.
+
+Section 89(3)(a) requires a response within five business days of receipt. If the records cannot be provided in that time, please give me the date by which they will be.
+
+Thank you for your help.</div>
+      </details>
+    </article>
+    <article class="request" id="dec">
+      <header>
+        <p class="agency">NYS Department of Environmental Conservation</p>
+        <h2>Monitoring records since the cleanup was certified, Former NuHart Plastic site (No. 224136)</h2>
+        <p class="badge neutral">Drafted, not yet filed</p>
+      </header>
+      <dl class="facts"><div class="fact"><dt>Filed</dt><dd>Not yet filed</dd></div></dl>
+      <h3>Timeline</h3>
+      <ol class="timeline"><li><time datetime="2026-11-18">November 18, 2026</time><span>Request drafted.</span></li></ol>
+      <h3>Records received</h3><p class="muted">None yet.</p>
+      <details>
+        <summary>Read the request</summary>
+        <div class="letter">To: Records Access Officer
+New York State Department of Environmental Conservation
+625 Broadway
+Albany, NY 12233
+
+Re: Freedom of Information Law request: post-certification monitoring records for the Former NuHart Plastic Manufacturing site (Site No. 224136)
+
+Dear Records Access Officer,
+
+Under the New York Freedom of Information Law, Article 6 of the Public Officers Law, I request copies of the following records concerning the Former NuHart Plastic Manufacturing State Superfund site, 65 Dupont Street, Brooklyn, NY 11222 (Site No. 224136). I have reviewed the documents already posted at extapps.dec.ny.gov/data/DecDocs/224136/ and ask only for records that are not posted there.
+
+1. All reports and data submitted under the Site Management Plan dated June 2025, from June 1, 2025 to the date of your response. This includes quarterly groundwater monitoring results for wells MW-8, MW-12, MW-13, MW-18, MW-38, MW-39, MW-43 and MW-44, monthly well gauging data, periodic review reports and the supporting laboratory reports.
+
+2. Results of all soil vapor intrusion and indoor air sampling at the site since March 2025, including the pre-occupancy round and the heating-season round required by the Site Management Plan, with laboratory reports and the chemical inventories taken at the time of sampling.
+
+3. The &quot;OU-2 ZVI Injection and SVE Pilot Test Summary Letter&quot; submitted on May 22, 2024, the Department&#x27;s response of July 3, 2024, and any revised soil vapor extraction design letter and responses to comments that followed.
+
+4. The &quot;OU-2 SVMP Sampling Memo&quot; dated March 5, 2025, with its laboratory reports, field sampling logs and figures, and the Department&#x27;s and the Department of Health&#x27;s correspondence concerning the decision not to install a full-scale soil vapor extraction system.
+
+5. Records of the construction, repair and reinstallation of soil vapor monitoring points SVMP-01 through SVMP-07, and field records showing the depth to groundwater at or near those points on each date they were sampled.
+
+6. Operation, maintenance and monitoring reports for the off-site LNAPL recovery systems from June 1, 2025 to the date of your response.
+
+7. Correspondence since January 1, 2023 between the Department and the New York City School Construction Authority, or the New York City Mayor&#x27;s Office of Environmental Remediation, concerning the property at 257 Franklin Street, Brooklyn.
+
+I ask for the records in electronic form, by email or download link. If any fee would exceed $25, please tell me before proceeding.
+
+Sample results, laboratory reports, data tables and field logs are factual data. Under Public Officers Law section 87(2)(g)(i) they must be disclosed even where they appear in draft or consultant-prepared documents. If you withhold any record or part of a record, please cite the specific exemption relied on, release the remainder, and tell me how to appeal.
+
+Section 89(3)(a) requires a response within five business days of receipt. If the records cannot be provided in that time, please give me the date by which they will be.
+
+Thank you for your help.</div>
+      </details>
+    </article>
+  <footer>
+    <p>Last updated November 18, 2026.</p>
+    <p>Under New York's Freedom of Information Law an agency must acknowledge a request
+    within five business days, and a denial can be appealed within 30 days. Deadlines shown
+    here skip weekends but not public holidays.</p>
+  </footer>
+</main>
+</body>
+</html>
