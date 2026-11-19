@@ -24,6 +24,45 @@ with contamination remaining under long-term management. This page tracks \
 Freedom of Information Law requests for the test results behind those \
 decisions, and posts the records as they arrive."""
 
+# The "why" section. "before" paragraphs come above the tables, "after" below.
+[why]
+heading = "Why these requests"
+before = [
+  "The state's own file on the NuHart site contains two sets of measurements, taken beside the site's northeast corner, that point in opposite directions.",
+  "Between April 2024 and early 2025, the solvent trichloroethene (TCE) measured in soil vapor under the Clay Street sidewalk fell by 74 to more than 99 percent.",
+]
+after = [
+  "Over the same months, TCE in the groundwater at that corner rose in seven of the eight monitored wells, in one of them about a hundredfold. Three wells that met the standard in May 2024 exceeded it by December, which may mean the contamination is moving.",
+  "The cleanup consultant attributed the fall in vapor to iron injected into the ground in February 2024 and to the end of construction pumping. On that basis it recommended against building a planned soil vapor extraction system. The state agreed, and certified the cleanup complete in July 2025. The long-term monitoring plan requires no further soil vapor sampling.",
+  "There may be a sound explanation. Groundwater can rebound when pumping stops, and vapor readings change with the season and the height of the water table. But it is hard to credit a fall in vapor to treatment while the groundwater beneath it is getting worse.",
+  "The school lot lies beside the opposite, southwest corner of the NuHart site, and the city has said that its own testing there found no NuHart contaminants above regulatory limits. These requests ask for the numbers behind that statement, and for what the state's wells and vapor points have shown since the cleanup was certified.",
+]
+source_label = "Site Management Plan, June 2025, sections 2.6.3 and 2.6.4 and Table 3 (NYSDEC site 224136)"
+source_url = "https://extapps.dec.ny.gov/data/DecDocs/224136/"
+
+  [[why.table]]
+  caption = "TCE in soil vapor, micrograms per cubic meter"
+  columns = ["Monitoring point", "April 2024", "Jan/Feb 2025"]
+  rows = [
+    ["SVMP-01", "94", "0.35"],
+    ["SVMP-02", "371", "2.6"],
+    ["SVMP-03", "191", "50"],
+  ]
+
+  [[why.table]]
+  caption = "TCE in groundwater, micrograms per liter (state standard: 5)"
+  columns = ["Well", "May 2024", "Aug 2024", "Dec 2024"]
+  rows = [
+    ["MW-43", "270", "43,000", "28,000"],
+    ["MW-38", "450", "520", "2,500"],
+    ["MW-39", "520", "1,000", "1,300"],
+    ["MW-13", "not detected", "0.95", "170"],
+    ["MW-12", "2.6", "2.8", "66"],
+    ["MW-18", "1.1", "1.8", "50"],
+    ["MW-44", "18", "45", "71–73"],
+    ["MW-8", "5,200", "330", "420"],
+  ]
+
 [[request]]
 id = "sca"
 agency = "NYC School Construction Authority"

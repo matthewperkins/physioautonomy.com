@@ -156,6 +156,32 @@ def render_request(req, today):
     </article>"""
 
 
+def render_why(why):
+    """The 'why these requests' section: paragraphs, small data tables, a source link."""
+    if not why:
+        return ""
+    parts = [f"<h2>{esc(why['heading'])}</h2>"]
+    for para in why.get("before", []):
+        parts.append(f"<p>{esc(para)}</p>")
+    for table in why.get("table", []):
+        head = "".join(f"<th>{esc(c)}</th>" for c in table["columns"])
+        body = "".join(
+            "<tr>" + "".join(f"<td>{esc(cell)}</td>" for cell in row) + "</tr>"
+            for row in table["rows"]
+        )
+        parts.append(
+            f'<figure><figcaption>{esc(table["caption"])}</figcaption>'
+            f'<div class="scroll"><table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div></figure>'
+        )
+    for para in why.get("after", []):
+        parts.append(f"<p>{esc(para)}</p>")
+    if why.get("source_url"):
+        parts.append(
+            f'<p class="muted">Source: <a href="{esc(why["source_url"])}">{esc(why["source_label"])}</a></p>'
+        )
+    return f'<section class="why">{"".join(parts)}</section>'
+
+
 CSS = """
 :root {
   --paper: #faf7f0; --card: #ffffff; --ink: #1f2420; --muted: #636b63;
@@ -222,6 +248,16 @@ a { color: var(--accent); }
 details { margin-top: 1.6rem; border-top: 1px solid var(--rule); padding-top: 1rem; }
 summary { cursor: pointer; font: 600 .9rem system-ui, sans-serif; color: var(--accent); }
 .letter { white-space: pre-wrap; font-size: .95rem; margin-top: 1rem; overflow-wrap: anywhere; }
+.why { margin: 2.5rem 0 0; }
+.why h2 { font-size: 1.5rem; }
+figure { margin: 1.4rem 0; }
+figcaption { font: 600 .9rem system-ui, sans-serif; margin-bottom: .4rem; }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font: .92rem system-ui, sans-serif; }
+th, td { text-align: right; padding: .4rem .7rem; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+th { font-weight: 600; color: var(--muted); }
+td { font-variant-numeric: tabular-nums; }
 footer { margin-top: 3rem; font: .85rem/1.5 system-ui, sans-serif; color: var(--muted); }
 footer p { margin: 0 0 .5rem; }
 @media (max-width: 520px) {
@@ -259,6 +295,7 @@ def main():
   <h1>{esc(site['title'])}</h1>
   <p class="tagline">{esc(site['tagline'])}</p>
   <p class="intro">{esc(intro)}</p>
+  {render_why(data.get("why"))}
   <div class="summary">
     <div><strong>{len(requests)}</strong>requests</div>
     <div><strong>{filed}</strong>filed</div>
